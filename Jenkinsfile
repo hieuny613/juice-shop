@@ -14,5 +14,15 @@ pipeline {
                 archiveArtifacts artifacts: 'gitleaks-report.json', allowEmptyArchive: true
             }
         }
+        stage('njsscan SAST') {
+            agent {
+                docker {
+                    image 'opensecurity/njsscan'
+                }
+            }
+            steps {
+                sh 'njsscan .'
+            }
+        }
     }
 }

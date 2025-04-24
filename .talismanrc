@@ -1,0 +1,6 @@
+fileignoreconfig:
+- filename: .scannerwork/ir/python/ir_000000011.metadata
+  checksum: 1e5319e44db29c4646c4703a52f77ed77674b9127046bd00a0984493d9f26822
+- filename: Jenkinsfile
+  checksum: eaa50b6daf0ee6d192a2579cdea6c2e3b22dcf3aea914af54b2e6edab37ac4cb
+version: "1.0"

@@ -23,6 +23,7 @@ pipeline {
             }
             steps {
                 script {
+                    sh 'ls -al'
                     sh 'njsscan . --json -o njsscan.json '
                 }
             }

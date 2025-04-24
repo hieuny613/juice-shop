@@ -6,7 +6,7 @@ pipeline {
             steps {
                 script {
                     try {
-                        sh 'gitleaks detect --source . --config .gitleaks.toml --report-path gitleaks-report.json'
+                        sh 'gitleaks detect --source . --config .gitleaks.toml --report-path gitleaks.json'
                     } catch (e) {
                         echo "Gitleaks failed, but we are ignoring the error." 
                     }

@@ -17,7 +17,8 @@ pipeline {
             agent {
                 docker {
                     image 'opensecurity/njsscan'
-                    args '-v . . --entrypoint=""'
+                    args '--entrypoint=""'
+                    reuseNode true
                 }
             }
             steps {

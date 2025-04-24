@@ -11,7 +11,6 @@ pipeline {
                         echo "Gitleaks failed, but we are ignoring the error." 
                     }
                 }
-                archiveArtifacts artifacts: 'gitleaks-report.json', allowEmptyArchive: true
             }
         }
         stage('njsscan SAST') {
@@ -23,9 +22,15 @@ pipeline {
             }
             steps {
                 script {
-                    sh 'njsscan .'
+                    sh 'njsscan . --json -o njsscan.json '
                 }
             }
+        }
+    }
+    post {
+        always {
+            archiveArtifacts artifacts: 'gitleaks.json', allowEmptyArchive: true
+            archiveArtifacts artifacts: 'njsscan.json', allowEmptyArchive: true
         }
     }
 }

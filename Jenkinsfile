@@ -43,6 +43,7 @@ pipeline {
         always {
             archiveArtifacts artifacts: 'gitleaks.json', allowEmptyArchive: true
             archiveArtifacts artifacts: 'njsscan.json', allowEmptyArchive: true
+            archiveArtifacts artifacts: 'semgrep.json', allowEmptyArchive: true
         }
     }
 }

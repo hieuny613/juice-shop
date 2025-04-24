@@ -14,13 +14,6 @@ pipeline {
             }
         }
         stage('njsscan SAST') {
-            agent {
-                docker {
-                    image 'opensecurity/njsscan'
-                    args '--entrypoint=""'
-                    reuseNode true
-                }
-            }
             steps {
                 script {
                     sh 'ls -al'

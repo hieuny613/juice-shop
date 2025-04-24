@@ -22,7 +22,9 @@ pipeline {
                 }
             }
             steps {
-                sh 'njsscan .'
+                script {
+                    sh 'njsscan .'
+                }
             }
         }
     }

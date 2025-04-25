@@ -70,7 +70,7 @@ pipeline {
         }
         stage('Integration Test'){
             steps{
-                echo 'Integration Tests'
+                sh 'bash integration-test.sh'
             }
         }
         

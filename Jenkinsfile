@@ -64,7 +64,8 @@ pipeline {
         }
         stage('Deployment Test'){
             steps{
-                echo 'Deployment Test'
+                sh 'docker rm -f juice-shop || true'
+                sh 'docker run -d --name=juice-shop -p 3000:3000 juice-shop'
             }
         }
         stage('Integration Test'){

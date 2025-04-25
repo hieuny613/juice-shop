@@ -74,7 +74,7 @@ pipeline {
                 echo 'Deployment Test'
             }
         }
-        stage('Deployment Test'){
+        stage('Integration Test'){
             steps{
                 echo 'Integration Tests'
             }

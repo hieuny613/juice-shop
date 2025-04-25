@@ -20,13 +20,6 @@ pipeline {
         }
         stage('SAST Scan'){
             parallel {
-                stage('NJSSCAN Scan') {
-                    steps {
-                        script {
-                            sh 'njsscan . --json -o njsscan.json'
-                        }
-                    }
-                }
                 stage('SEMGREP Scan') {
                     steps {
                         script {

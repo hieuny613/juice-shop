@@ -37,11 +37,11 @@ pipeline {
                 
             }
         }
-        stage('Dependency Check Scan'){
-            steps {
-                sh '/opt/dependency-check/bin/dependency-check.sh --scan $PWD --format XML --out dependency-check.xml'
-            }
-        }
+        // stage('Dependency Check Scan'){
+        //     steps {
+        //         sh '/opt/dependency-check/bin/dependency-check.sh --scan $PWD --format XML --out dependency-check.xml'
+        //     }
+        // }
         stage('Trivy check Dockerfile'){
             steps {
                 sh 'trivy config . -f json -o trivy-dockerfile.json'

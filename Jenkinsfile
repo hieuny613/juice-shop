@@ -39,7 +39,7 @@ pipeline {
         }
         stage('Dependency Check Scan'){
             steps {
-                sh '/opt/dependency-check/bin/dependency-check.sh --scan . --format XML --out dependency-check.xml'
+                sh '/opt/dependency-check/bin/dependency-check.sh --scan $PWD --format XML --out dependency-check.xml'
             }
         }
         stage('Trivy check Dockerfile'){
